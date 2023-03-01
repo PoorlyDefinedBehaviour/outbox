@@ -1,0 +1,12 @@
+version: "3"
+services:
+  db:
+    container_name: "db_outbox"
+    restart: always
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "mysql"
+    volumes:
+      - ./outbox:/var/lib/outbox/data
+    ports:
+      - "3306:3306"
